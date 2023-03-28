@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol OptionScreenProtocol: class {
+    func actionGenerateButton()
+}
+
 class OptionScreen: UIView {
+    
+    private weak var delegate: OptionScreenProtocol?
+    
+    func delegate(delegate:OptionScreenProtocol){
+        self.delegate = delegate
+    }
     
     lazy var titleLabel:UILabel = {
         let lb = UILabel()
@@ -108,8 +118,6 @@ class OptionScreen: UIView {
         return sw
     }()
     
- 
-    
     lazy var useCharacterLabel:UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
@@ -134,7 +142,7 @@ class OptionScreen: UIView {
         btn.setTitle("Gerar senha", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         btn.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0)
-
+        btn.addTarget(self, action: #selector(self.tappedGenerate), for: .touchUpInside)
         return btn
     }()
     
@@ -147,6 +155,15 @@ class OptionScreen: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func configTextFieldDelegate(delegate: UITextFieldDelegate){
+        self.quantityTextField.delegate = delegate
+        self.totalTextField.delegate = delegate
+    }
+    
+    @objc private func tappedGenerate() {
+        self.delegate?.actionGenerateButton()
     }
     
     private func configSuperView() {

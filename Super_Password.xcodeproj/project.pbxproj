@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4104210629D319FC005365AD /* ListPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4104210529D319FC005365AD /* ListPasswordViewController.swift */; };
+		4104210829D31A16005365AD /* ListPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4104210729D31A16005365AD /* ListPasswordScreen.swift */; };
 		41E043CC29D1DB1400211490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E043CB29D1DB1400211490 /* AppDelegate.swift */; };
 		41E043CE29D1DB1400211490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E043CD29D1DB1400211490 /* SceneDelegate.swift */; };
 		41E043D029D1DB1400211490 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E043CF29D1DB1400211490 /* OptionViewController.swift */; };
 		41E043D529D1DB1500211490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E043D429D1DB1500211490 /* Assets.xcassets */; };
 		41E043D829D1DB1500211490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E043D629D1DB1500211490 /* LaunchScreen.storyboard */; };
 		41E043E329D1DC6400211490 /* OptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E043E229D1DC6400211490 /* OptionScreen.swift */; };
-		41E043E829D1F73100211490 /* GenerateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E043E729D1F73100211490 /* GenerateScreen.swift */; };
-		41E043EA29D1F74B00211490 /* GenerateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E043E929D1F74A00211490 /* GenerateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4104210529D319FC005365AD /* ListPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPasswordViewController.swift; sourceTree = "<group>"; };
+		4104210729D31A16005365AD /* ListPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPasswordScreen.swift; sourceTree = "<group>"; };
 		41E043C829D1DB1400211490 /* Super_Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Super_Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E043CB29D1DB1400211490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41E043CD29D1DB1400211490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,8 +28,6 @@
 		41E043D729D1DB1500211490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41E043D929D1DB1500211490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41E043E229D1DC6400211490 /* OptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionScreen.swift; sourceTree = "<group>"; };
-		41E043E729D1F73100211490 /* GenerateScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateScreen.swift; sourceTree = "<group>"; };
-		41E043E929D1F74A00211490 /* GenerateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4104210229D319CB005365AD /* ListPassword */ = {
+			isa = PBXGroup;
+			children = (
+				4104210329D319D8005365AD /* Screnn */,
+				4104210429D319E2005365AD /* VC */,
+			);
+			path = ListPassword;
+			sourceTree = "<group>";
+		};
+		4104210329D319D8005365AD /* Screnn */ = {
+			isa = PBXGroup;
+			children = (
+				4104210729D31A16005365AD /* ListPasswordScreen.swift */,
+			);
+			path = Screnn;
+			sourceTree = "<group>";
+		};
+		4104210429D319E2005365AD /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				4104210529D319FC005365AD /* ListPasswordViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		41E043BF29D1DB1400211490 = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +85,7 @@
 		41E043CA29D1DB1400211490 /* Super_Password */ = {
 			isa = PBXGroup;
 			children = (
-				41E043E429D1F6F700211490 /* Generate */,
+				4104210229D319CB005365AD /* ListPassword */,
 				41E043DF29D1DBF900211490 /* Option */,
 				41E043CB29D1DB1400211490 /* AppDelegate.swift */,
 				41E043CD29D1DB1400211490 /* SceneDelegate.swift */,
@@ -92,31 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				41E043CF29D1DB1400211490 /* OptionViewController.swift */,
-			);
-			path = VC;
-			sourceTree = "<group>";
-		};
-		41E043E429D1F6F700211490 /* Generate */ = {
-			isa = PBXGroup;
-			children = (
-				41E043E529D1F71500211490 /* Screen */,
-				41E043E629D1F71A00211490 /* VC */,
-			);
-			path = Generate;
-			sourceTree = "<group>";
-		};
-		41E043E529D1F71500211490 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				41E043E729D1F73100211490 /* GenerateScreen.swift */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		41E043E629D1F71A00211490 /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				41E043E929D1F74A00211490 /* GenerateViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -191,10 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4104210829D31A16005365AD /* ListPasswordScreen.swift in Sources */,
+				4104210629D319FC005365AD /* ListPasswordViewController.swift in Sources */,
 				41E043D029D1DB1400211490 /* OptionViewController.swift in Sources */,
-				41E043EA29D1F74B00211490 /* GenerateViewController.swift in Sources */,
 				41E043CC29D1DB1400211490 /* AppDelegate.swift in Sources */,
-				41E043E829D1F73100211490 /* GenerateScreen.swift in Sources */,
 				41E043E329D1DC6400211490 /* OptionScreen.swift in Sources */,
 				41E043CE29D1DB1400211490 /* SceneDelegate.swift in Sources */,
 			);

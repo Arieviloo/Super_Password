@@ -18,9 +18,22 @@ class OptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .red
-        
+        self.optionScreen?.configTextFieldDelegate(delegate: self)
+        self.optionScreen?.delegate(delegate: self)
     }
-
-
 }
 
+extension OptionViewController:UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+}
+
+extension OptionViewController:OptionScreenProtocol {
+    func actionGenerateButton() {
+        let listPasswordVC = ListPasswordViewController()
+        self.navigationController?.pushViewController(listPasswordVC, animated: true)
+    }
+    
+    
+}

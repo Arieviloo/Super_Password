@@ -1,17 +1,25 @@
 //
-//  GenerateViewController.swift
+//  ListPasswordViewController.swift
 //  Super_Password
 //
-//  Created by Jadiê on 27/03/23.
+//  Created by Jadiê on 28/03/23.
 //
 
 import UIKit
 
-class GenerateViewController: UIViewController {
+class ListPasswordViewController: UIViewController {
+    
+    var listPasswordScreen: ListPasswordScreen?
 
+    override func loadView() {
+        self.listPasswordScreen = ListPasswordScreen()
+        self.view = self.listPasswordScreen
+    }
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        self.view.backgroundColor = .blue
         // Do any additional setup after loading the view.
     }
     
