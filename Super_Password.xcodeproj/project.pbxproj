@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4104210629D319FC005365AD /* ListPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4104210529D319FC005365AD /* ListPasswordViewController.swift */; };
 		4104210829D31A16005365AD /* ListPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4104210729D31A16005365AD /* ListPasswordScreen.swift */; };
+		4104210C29D33B08005365AD /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4104210B29D33B08005365AD /* PasswordGenerator.swift */; };
 		41E043CC29D1DB1400211490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E043CB29D1DB1400211490 /* AppDelegate.swift */; };
 		41E043CE29D1DB1400211490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E043CD29D1DB1400211490 /* SceneDelegate.swift */; };
 		41E043D029D1DB1400211490 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E043CF29D1DB1400211490 /* OptionViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		4104210529D319FC005365AD /* ListPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPasswordViewController.swift; sourceTree = "<group>"; };
 		4104210729D31A16005365AD /* ListPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPasswordScreen.swift; sourceTree = "<group>"; };
+		4104210B29D33B08005365AD /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
 		41E043C829D1DB1400211490 /* Super_Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Super_Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E043CB29D1DB1400211490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41E043CD29D1DB1400211490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		4104210A29D33AE2005365AD /* PassordGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				4104210B29D33B08005365AD /* PasswordGenerator.swift */,
+			);
+			path = PassordGenerator;
+			sourceTree = "<group>";
+		};
 		41E043BF29D1DB1400211490 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 		41E043CA29D1DB1400211490 /* Super_Password */ = {
 			isa = PBXGroup;
 			children = (
+				4104210A29D33AE2005365AD /* PassordGenerator */,
 				4104210229D319CB005365AD /* ListPassword */,
 				41E043DF29D1DBF900211490 /* Option */,
 				41E043CB29D1DB1400211490 /* AppDelegate.swift */,
@@ -197,6 +208,7 @@
 				41E043CC29D1DB1400211490 /* AppDelegate.swift in Sources */,
 				41E043E329D1DC6400211490 /* OptionScreen.swift in Sources */,
 				41E043CE29D1DB1400211490 /* SceneDelegate.swift in Sources */,
+				4104210C29D33B08005365AD /* PasswordGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

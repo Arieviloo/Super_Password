@@ -38,17 +38,29 @@ class ListPasswordScreen: UIView {
         tv.textAlignment = NSTextAlignment.justified
         tv.textColor = UIColor.blue
         tv.backgroundColor = UIColor.lightGray
-        tv.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu lorem non enim egestas laoreet eu ut enim. Suspendisse a pellentesque lectus. Etiam convallis justo sed felis bibendum, a aliquet tortor sagittis. Fusce sagittis eu nisi sed aliquet. Phasellus libero nisi, faucibus vel ultrices vel, suscipit at magna. Etiam varius nec enim ac ullamcorper. Vestibulum commodo iaculis ipsum, sed mollis magna malesuada ut. Morbi consequat tempus nisl, hendrerit mattis ligula placerat eget. Quisque sed molestie sem, ultricies consequat ex. Integer imperdiet, lorem vitae efficitur aliquet, nisi velit semper ex, id condimentum tellus mauris sit amet diam. Sed sem leo, suscipit a elementum quis, tempor eu felis. In at turpis imperdiet, auctor leo ut, commodo metus. Sed quis maximus metus, ac scelerisque lectus. Curabitur dictum ex vitae tortor vulputate auctor."
         
         return tv
     }()
-
-   
     
+    lazy var generateAgainButton: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("Gerar novamente", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        btn.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0)
+        btn.addTarget(self, action: #selector(self.tappedGenerate), for: .touchUpInside)
+        return btn
+    }()
+
     
     private func configSuperView() {
         self.addSubview(self.titleLabel)
         self.addSubview(self.listTextView)
+        self.addSubview(self.generateAgainButton)
+    }
+    
+    @objc private func tappedGenerate() {
+        print("gerar novamente")
     }
     
     private func setUpConstraints() {
@@ -60,6 +72,11 @@ class ListPasswordScreen: UIView {
             self.listTextView.heightAnchor.constraint(equalToConstant: 300),
             self.listTextView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 20),
             self.listTextView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor,constant: -20),
+            
+            self.generateAgainButton.topAnchor.constraint(equalTo: self.listTextView.bottomAnchor, constant: 50),
+            self.generateAgainButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            
+            
         ])
     }
     
