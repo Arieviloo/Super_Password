@@ -17,10 +17,13 @@ class OptionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
         self.optionScreen?.configTextFieldDelegate(delegate: self)
         self.optionScreen?.delegate(delegate: self)
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 255/255, green: 118/255, blue: 176/255, alpha: 1.0)
+        self.navigationItem.backButtonTitle = "Voltar"
+        
     }
+    
     
 }
 

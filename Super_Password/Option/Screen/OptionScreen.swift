@@ -78,7 +78,7 @@ class OptionScreen: UIView {
         sw.translatesAutoresizingMaskIntoConstraints = false
         sw.isOn = true
         sw.isEnabled = true
-        sw.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        sw.onTintColor = UIColor(red: 255/255, green: 118/255, blue: 176/255, alpha: 1.0)
         return sw
     }()
     
@@ -96,7 +96,7 @@ class OptionScreen: UIView {
         sw.translatesAutoresizingMaskIntoConstraints = false
         sw.isOn = true
         sw.isEnabled = true
-        sw.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        sw.onTintColor = UIColor(red: 255/255, green: 118/255, blue: 176/255, alpha: 1.0)
         return sw
     }()
     
@@ -114,7 +114,7 @@ class OptionScreen: UIView {
         sw.translatesAutoresizingMaskIntoConstraints = false
         sw.isOn = true
         sw.isEnabled = true
-        sw.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        sw.onTintColor = UIColor(red: 255/255, green: 118/255, blue: 176/255, alpha: 1.0)
         return sw
     }()
     
@@ -132,7 +132,7 @@ class OptionScreen: UIView {
         sw.translatesAutoresizingMaskIntoConstraints = false
         sw.isOn = true
         sw.isEnabled = true
-        sw.onTintColor = UIColor(red: 55/255, green: 120/255, blue: 250/255, alpha: 1)
+        sw.onTintColor = UIColor(red: 255/255, green: 118/255, blue: 176/255, alpha: 1.0)
         return sw
     }()
     
@@ -141,7 +141,7 @@ class OptionScreen: UIView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Gerar senha", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        btn.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0)
+        btn.backgroundColor = UIColor(red: 255/255, green: 118/255, blue: 176/255, alpha: 1.0)
         btn.addTarget(self, action: #selector(self.tappedGenerate), for: .touchUpInside)
         return btn
     }()
@@ -149,12 +149,17 @@ class OptionScreen: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.configScreenBackground()
         self.configSuperView()
         self.setUpConstrainsts()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configScreenBackground() {
+        self.backgroundColor = UIColor(red: 26/255, green: 25/255, blue: 59/255, alpha: 1.0)
     }
     
     public func configTextFieldDelegate(delegate: UITextFieldDelegate){

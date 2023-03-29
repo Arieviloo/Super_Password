@@ -22,7 +22,6 @@ class ListPasswordViewController: UIViewController {
     override func loadView() {
         self.listPasswordScreen = ListPasswordScreen()
         self.view = self.listPasswordScreen
-        print("\(useLetters) aqui oh")
         
         passwordGenerator = PasswordGenerator(numberOfCharacters: self.numberOfCharacters, useLetters: self.useLetters, useNumbers: self.useNumbers, useCapitalLetters: self.useCapitalLetters, useSpecialCharacters: self.useSpecialCharacters)
         
@@ -40,7 +39,6 @@ class ListPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .blue
     }
  
 

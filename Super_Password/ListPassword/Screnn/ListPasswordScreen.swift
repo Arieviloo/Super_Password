@@ -9,11 +9,9 @@ import UIKit
 
 class ListPasswordScreen: UIView {
     
-    
-   
-
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.configScreenBackground()
         self.configSuperView()
         self.setUpConstraints()
     }
@@ -38,6 +36,10 @@ class ListPasswordScreen: UIView {
         tv.textAlignment = NSTextAlignment.justified
         tv.textColor = UIColor.blue
         tv.backgroundColor = UIColor.lightGray
+        tv.isEditable = false
+        tv.textColor = .white
+        tv.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        tv.backgroundColor = UIColor(red: 255/255, green: 187/255, blue: 72/255, alpha: 1.0)
         
         return tv
     }()
@@ -51,6 +53,10 @@ class ListPasswordScreen: UIView {
         btn.addTarget(self, action: #selector(self.tappedGenerate), for: .touchUpInside)
         return btn
     }()
+    
+    private func configScreenBackground() {
+        self.backgroundColor = UIColor(red: 26/255, green: 25/255, blue: 59/255, alpha: 1.0)
+    }
 
     
     private func configSuperView() {
@@ -62,6 +68,7 @@ class ListPasswordScreen: UIView {
     @objc private func tappedGenerate() {
         print("gerar novamente")
     }
+    
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
@@ -75,7 +82,6 @@ class ListPasswordScreen: UIView {
             
             self.generateAgainButton.topAnchor.constraint(equalTo: self.listTextView.bottomAnchor, constant: 50),
             self.generateAgainButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            
             
         ])
     }
