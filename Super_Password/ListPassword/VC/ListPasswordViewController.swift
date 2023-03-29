@@ -39,7 +39,17 @@ class ListPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.listPasswordScreen?.delegate(delegate: self)
     }
  
 
+}
+
+extension ListPasswordViewController:ListPasswordScreenProtocol {
+    func actionGenerateAgain() {
+        self.generatePasswords()
+    }
+    
+    
 }

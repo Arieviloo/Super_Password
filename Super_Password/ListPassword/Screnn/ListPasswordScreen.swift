@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol ListPasswordScreenProtocol: class {
+    func actionGenerateAgain()
+}
+
 class ListPasswordScreen: UIView {
+    
+    weak var delegate:ListPasswordScreenProtocol?
+    
+    public func delegate(delegate: ListPasswordScreenProtocol) {
+        self.delegate = delegate
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +36,7 @@ class ListPasswordScreen: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Lista de senhas"
         lb.textColor = .white
+        lb.font = UIFont.systemFont(ofSize: 26)
         return lb
     }()
     
@@ -39,7 +50,7 @@ class ListPasswordScreen: UIView {
         tv.isEditable = false
         tv.textColor = .white
         tv.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        tv.backgroundColor = UIColor(red: 255/255, green: 187/255, blue: 72/255, alpha: 1.0)
+        tv.backgroundColor = UIColor(red: 63/255, green: 62/255, blue: 99/255, alpha: 1.0)
         
         return tv
     }()
@@ -48,8 +59,9 @@ class ListPasswordScreen: UIView {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Gerar novamente", for: .normal)
+        btn.layer.cornerRadius = 8
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        btn.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0)
+        btn.backgroundColor = UIColor(red: 255/255, green: 118/255, blue: 176/255, alpha: 1.0)
         btn.addTarget(self, action: #selector(self.tappedGenerate), for: .touchUpInside)
         return btn
     }()
@@ -66,7 +78,7 @@ class ListPasswordScreen: UIView {
     }
     
     @objc private func tappedGenerate() {
-        print("gerar novamente")
+        self.delegate?.actionGenerateAgain()
     }
     
     
@@ -82,6 +94,9 @@ class ListPasswordScreen: UIView {
             
             self.generateAgainButton.topAnchor.constraint(equalTo: self.listTextView.bottomAnchor, constant: 50),
             self.generateAgainButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.generateAgainButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            self.generateAgainButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            self.generateAgainButton.heightAnchor.constraint(equalToConstant: 50)
             
         ])
     }

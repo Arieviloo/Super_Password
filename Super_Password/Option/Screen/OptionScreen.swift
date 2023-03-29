@@ -24,7 +24,7 @@ class OptionScreen: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Gerador de senhas"
         lb.textColor = .white
-        lb.font = UIFont.systemFont(ofSize: 30)
+        lb.font = UIFont.systemFont(ofSize: 26)
         return lb
     }()
     
@@ -33,13 +33,14 @@ class OptionScreen: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Quantidade de senhas:"
         lb.textColor = .white
-        lb.font = UIFont.systemFont(ofSize: 20)
+        lb.font = UIFont.systemFont(ofSize: 18)
         return lb
     }()
     
     lazy var quantityTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.backgroundColor = .white
         tf.textColor = .darkGray
@@ -51,13 +52,15 @@ class OptionScreen: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Total de caracteres:"
         lb.textColor = .white
-        lb.font = UIFont.systemFont(ofSize: 20)
+        lb.font = UIFont.systemFont(ofSize: 18)
         return lb
     }()
     
     lazy var totalTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.placeholder = "Max: 16"
+        tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.backgroundColor = .white
         tf.textColor = .darkGray
@@ -69,7 +72,7 @@ class OptionScreen: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Usar letras minúsculas:"
         lb.textColor = .white
-        lb.font = UIFont.systemFont(ofSize: 20)
+        lb.font = UIFont.systemFont(ofSize: 18)
         return lb
     }()
     
@@ -87,7 +90,7 @@ class OptionScreen: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Usar letras maiúsculas:"
         lb.textColor = .white
-        lb.font = UIFont.systemFont(ofSize: 20)
+        lb.font = UIFont.systemFont(ofSize: 18)
         return lb
     }()
     
@@ -105,7 +108,7 @@ class OptionScreen: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Usar Números:"
         lb.textColor = .white
-        lb.font = UIFont.systemFont(ofSize: 20)
+        lb.font = UIFont.systemFont(ofSize: 18)
         return lb
     }()
     
@@ -123,7 +126,7 @@ class OptionScreen: UIView {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Usar caracteres especiais:"
         lb.textColor = .white
-        lb.font = UIFont.systemFont(ofSize: 20)
+        lb.font = UIFont.systemFont(ofSize: 18)
         return lb
     }()
     
@@ -140,6 +143,7 @@ class OptionScreen: UIView {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Gerar senha", for: .normal)
+        btn.layer.cornerRadius = 8
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         btn.backgroundColor = UIColor(red: 255/255, green: 118/255, blue: 176/255, alpha: 1.0)
         btn.addTarget(self, action: #selector(self.tappedGenerate), for: .touchUpInside)
@@ -198,6 +202,7 @@ class OptionScreen: UIView {
             self.quantityLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -120),
             
             self.quantityTextField.topAnchor.constraint(equalTo: self.quantityLabel.topAnchor),
+            self.quantityTextField.centerYAnchor.constraint(equalTo: self.quantityLabel.centerYAnchor),
             self.quantityTextField.leadingAnchor.constraint(equalTo: self.quantityLabel.trailingAnchor, constant: 20),
             self.quantityTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             
@@ -206,6 +211,7 @@ class OptionScreen: UIView {
             self.totalLabel.trailingAnchor.constraint(equalTo: self.quantityLabel.trailingAnchor),
             
             self.totalTextField.topAnchor.constraint(equalTo: self.totalLabel.topAnchor),
+            self.totalTextField.centerYAnchor.constraint(equalTo: self.totalLabel.centerYAnchor),
             self.totalTextField.trailingAnchor.constraint(equalTo: self.quantityTextField.trailingAnchor),
             self.totalTextField.leadingAnchor.constraint(equalTo: self.quantityTextField.leadingAnchor),
             
@@ -214,8 +220,7 @@ class OptionScreen: UIView {
             self.useLowerCaseLabel.trailingAnchor.constraint(equalTo: self.quantityLabel.trailingAnchor),
             
             self.useLowerCaseSwitch.topAnchor.constraint(equalTo: self.useLowerCaseLabel.topAnchor),
-            self.useLowerCaseSwitch.leadingAnchor.constraint(equalTo: self.quantityTextField.leadingAnchor),
-            self.useLowerCaseSwitch.trailingAnchor.constraint(equalTo: self.quantityTextField.trailingAnchor),
+            self.useLowerCaseSwitch.trailingAnchor.constraint(equalTo: self.quantityTextField.trailingAnchor, constant: 0),
             self.useLowerCaseSwitch.centerYAnchor.constraint(equalTo: self.useLowerCaseLabel.centerYAnchor),
             
             self.useUpperCaseLabel.topAnchor.constraint(equalTo: self.useLowerCaseLabel.bottomAnchor, constant: 20),
@@ -224,8 +229,7 @@ class OptionScreen: UIView {
             
             self.useUpperCaseSwitch.topAnchor.constraint(equalTo: self.useUpperCaseLabel.topAnchor),
             self.useUpperCaseSwitch.centerYAnchor.constraint(equalTo: self.useUpperCaseLabel.centerYAnchor),
-            self.useUpperCaseSwitch.leadingAnchor.constraint(equalTo: self.quantityTextField.leadingAnchor),
-            self.useUpperCaseSwitch.trailingAnchor.constraint(equalTo: self.quantityTextField.trailingAnchor),
+            self.useUpperCaseSwitch.trailingAnchor.constraint(equalTo: self.quantityTextField.trailingAnchor, constant: 0),
             
             self.useNumberLabel.topAnchor.constraint(equalTo: self.useUpperCaseLabel.bottomAnchor, constant: 20),
             self.useNumberLabel.leadingAnchor.constraint(equalTo: self.quantityLabel.leadingAnchor),
@@ -233,8 +237,7 @@ class OptionScreen: UIView {
             
             self.useNumberSwitch.topAnchor.constraint(equalTo: self.useNumberLabel.topAnchor),
             self.useNumberSwitch.centerYAnchor.constraint(equalTo: self.useNumberLabel.centerYAnchor),
-            self.useNumberSwitch.leadingAnchor.constraint(equalTo: self.quantityTextField.leadingAnchor),
-            self.useNumberSwitch.trailingAnchor.constraint(equalTo: self.quantityTextField.trailingAnchor),
+            self.useNumberSwitch.trailingAnchor.constraint(equalTo: self.quantityTextField.trailingAnchor, constant: 0),
             
             self.useCharacterLabel.topAnchor.constraint(equalTo: self.useNumberLabel.bottomAnchor, constant: 20),
             self.useCharacterLabel.leadingAnchor.constraint(equalTo: self.quantityLabel.leadingAnchor),
@@ -242,8 +245,7 @@ class OptionScreen: UIView {
             
             self.useCharacterSwitch.topAnchor.constraint(equalTo: self.useCharacterLabel.topAnchor),
             self.useCharacterSwitch.centerYAnchor.constraint(equalTo: self.useCharacterLabel.centerYAnchor),
-            self.useCharacterSwitch.leadingAnchor.constraint(equalTo: self.quantityTextField.leadingAnchor),
-            self.useCharacterSwitch.trailingAnchor.constraint(equalTo: self.quantityTextField.trailingAnchor),
+            self.useCharacterSwitch.trailingAnchor.constraint(equalTo: self.quantityTextField.trailingAnchor, constant: 0),
             
             self.generateButton.topAnchor.constraint(equalTo: self.useCharacterLabel.bottomAnchor, constant: 30),
             self.generateButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
