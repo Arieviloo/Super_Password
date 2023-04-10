@@ -19,7 +19,7 @@ class OptionScreen: UIView {
         self.delegate = delegate
     }
     
-    lazy var titleLabel:UILabel = {
+   lazy  var titleLabel:UILabel = {
         let lb = UILabel()
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.text = "Gerador de senhas"
@@ -146,20 +146,27 @@ class OptionScreen: UIView {
         btn.layer.cornerRadius = 8
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         btn.backgroundColor = UIColor(red: 255/255, green: 118/255, blue: 176/255, alpha: 1.0)
-        btn.addTarget(self, action: #selector(self.tappedGenerate), for: .touchUpInside)
+//        btn.addTarget(self, action: #selector(self.tappedGenerate), for: .touchUpInside)
         return btn
     }()
     
 
     override init(frame: CGRect) {
+        
         super.init(frame: frame)
         self.configScreenBackground()
         self.configSuperView()
+        setClick()
         self.setUpConstrainsts()
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func setClick() {
+        generateButton.addTarget(self, action: #selector(self.tappedGenerate), for: .touchUpInside)
     }
     
     private func configScreenBackground() {
@@ -251,8 +258,7 @@ class OptionScreen: UIView {
             self.generateButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.generateButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.generateButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            self.generateButton.heightAnchor.constraint(equalToConstant: 50)
-           
+            self.generateButton.heightAnchor.constraint(equalToConstant: 50) 
             
         ])
     }

@@ -10,7 +10,7 @@ import UIKit
 class ListPasswordViewController: UIViewController {
     
     var listPasswordScreen: ListPasswordScreen?
-    var passwordGenerator: PasswordGenerator!
+    var passwordGenerator: PasswordGenerator?
     
     var numberOfCharacters: Int = 10
     var numberOfPasswords: Int = 1
@@ -31,7 +31,7 @@ class ListPasswordViewController: UIViewController {
     private func generatePasswords() {
         listPasswordScreen?.listTextView.scrollRangeToVisible(NSRange(location: 0, length: 0))
         listPasswordScreen?.listTextView.text = ""
-        let passwords = passwordGenerator.generate(total: numberOfPasswords)
+        guard let passwords = passwordGenerator?.generate(total: numberOfPasswords) else { return } 
         for password in passwords {
             listPasswordScreen?.listTextView.text.append(password + "\n\n")
         }
