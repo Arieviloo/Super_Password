@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navVc = UINavigationController(rootViewController: vc)
         window.rootViewController = navVc
         window.makeKeyAndVisible()
-        window.overrideUserInterfaceStyle = .dark 
+        window.overrideUserInterfaceStyle = .dark
         self.window = window
        
     }

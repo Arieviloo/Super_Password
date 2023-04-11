@@ -59,10 +59,11 @@ class OptionScreen: UIView {
     lazy var totalTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.placeholder = "Max: 16"
+        tf.autocorrectionType = .no
+        tf.backgroundColor = .white
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
-        tf.backgroundColor = .white
+        tf.attributedPlaceholder = NSAttributedString(string: "Max: 16", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         tf.textColor = .darkGray
         return tf
     }()
